@@ -1,7 +1,7 @@
 package com.penn.springtest;
 
-import com.penn.springtest.vo.Order;
-import com.penn.springtest.vo.User;
+import com.penn.spring.ioc.vo.Order;
+import com.penn.spring.ioc.vo.User;
 import org.springframework.context.ApplicationContext;
 import org.springframework.context.support.ClassPathXmlApplicationContext;
 

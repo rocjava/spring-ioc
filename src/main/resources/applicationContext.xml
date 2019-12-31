@@ -3,14 +3,11 @@
 						   http://www.springframework.org/schema/beans/spring-beans-4.2.xsd "
         xmlns="http://www.springframework.org/schema/beans"
         xmlns:xsi="http://www.w3.org/2001/XMLSchema-instance">
-    <bean id="user001"  class="com.penn.springtest.vo.User"></bean>
-    <bean id="order001"  class="com.penn.springtest.vo.Order" scope="prototype"></bean>
-
-
-    <bean id="dataSource" class="org.springframework.jdbc.datasource.DriverManagerDataSource">
-        <property name="driverClassName" value="com.mysql.jdbc.Driver"/>
-        <property name="url" value="jdbc:mysql://192.168.1.82:3306/omp_order?useUnicode=true"/>
-        <property name="username" value="gtown"/>
-        <property name="password" value="Gtown123!QA"/>
+    <bean id="user001"  class="com.penn.spring.ioc.vo.User">
+        <constructor-arg ref="order001"></constructor-arg>
     </bean>
+    <bean id="order001" class="com.penn.spring.ioc.vo.Order">
+        <constructor-arg ref="user001"></constructor-arg>
+    </bean>
+
 </beans>
